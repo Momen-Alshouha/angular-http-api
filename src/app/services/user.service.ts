@@ -20,7 +20,7 @@ export class UserService {
   }
 
   getUser(id : number) : Observable<User> {
-    return this._http.get<User>(`${environment.BASE_URL}/${id}`);
+    return this._http.get<User>(`${environment.BASE_URL}/users/${id}`);
   }
 
 }
