@@ -4,11 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserComponent } from './user/user.component';
-import { UserCardComponent } from './user-card/user-card.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserComponent } from './users/user/user.component';
+import { UserCardComponent } from './users/user-card/user-card.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
+import { PostComponent } from './posts/post/post.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HomeComponent } from './home/home.component';
     UserCardComponent,
     UserDetailsComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    PostDetailsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
