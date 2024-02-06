@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './users/user/user.component';
 import { UserCardComponent } from './users/user-card/user-card.component';
-import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,7 +19,6 @@ import { PhotoComponent } from './photos/photo/photo.component';
     AppComponent,
     UserComponent,
     UserCardComponent,
-    UserDetailsComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,

@@ -15,7 +15,6 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   @Input() post?: Post;
   postId?: number;
   subscription!: Subscription;
-  postDetails?: Post;
   showViewDetailsButton? : boolean =true;
 
   constructor(private route: ActivatedRoute, private _postService: PostService) {}
