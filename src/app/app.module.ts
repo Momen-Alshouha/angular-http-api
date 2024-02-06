@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { PostComponent } from './posts/post/post.component';
+import { PhotosComponent } from './photos/photos.component';
+import { PhotoComponent } from './photos/photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { PostComponent } from './posts/post/post.component';
     FooterComponent,
     PostDetailsComponent,
     PostComponent,
+    PhotosComponent,
+    PhotoComponent,
   ],
   imports: [
     BrowserModule,
