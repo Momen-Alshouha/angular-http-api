@@ -20,12 +20,9 @@ export class PostComponent implements OnInit , OnDestroy {
   }
 
   onGetPosts(): void {
-    this.subscription = this._postService.fetchPosts().subscribe({
-      next: (postsResponse) => {
+    this.subscription = this._postService.fetchPosts().subscribe(
+      (postsResponse) => {
         this.posts = postsResponse;
-      },
-      error: (err) => console.log(err),
-      complete: () => console.log('posts completes!'),
     });
   }
 

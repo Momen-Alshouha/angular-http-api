@@ -11,33 +11,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./post-details.component.scss'],
 })
 export class PostDetailsComponent implements OnInit, OnDestroy {
+
   @Input() post?: Post;
   postId?: number;
   subscription!: Subscription;
   postDetails?: Post;
-  
+  showViewDetailsButton? : boolean =true;
 
   constructor(private route: ActivatedRoute, private _postService: PostService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const idString = params.get('id');
-
       if (idString !== null) {
         this.postId = +idString;
         this.fetchPostDetails();
+        this.showViewDetailsButton = false;
       }
     });
   }
 
   fetchPostDetails(): void {
     if (this.postId !== null && this.postId !== undefined) {
-      this._postService.fetchPost(this.postId).subscribe({
-        next: (response) => {
+      this._postService.fetchPost(this.postId).subscribe(
+        (response) => {
           this.post = response;
-        },
-        error: (err) => console.log(err),
-        complete: () => console.log('complete'),
       });
     }
   }
