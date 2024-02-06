@@ -11,7 +11,7 @@ import { UserService } from '../../services/user.service';
 export class UserCardComponent {
   @Input() user? : User;
   userId?: number | null;
-
+  showViewDetailsButton : boolean = true;
   constructor(
     private route: ActivatedRoute,
     private userService: UserService
@@ -24,6 +24,7 @@ export class UserCardComponent {
       if (idString !== null) {
         this.userId = +idString;
         this.fetchUserDetails();
+        this.showViewDetailsButton = false;
       }
     });
   }

@@ -24,5 +24,5 @@
 <p>
   <strong>Business:</strong> {{ user?.company?.bs }}
 </p>
-<button *ngIf="user?.id" [routerLink]="['/users', user?.id]">View Details</button><hr>
+<button *ngIf="user?.id && showViewDetailsButton" [routerLink]="['/users', user?.id]">View Details</button><hr>
 </div>
