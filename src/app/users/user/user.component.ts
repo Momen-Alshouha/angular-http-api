@@ -21,7 +21,7 @@ export class UserComponent implements OnInit , OnDestroy {
   }
 
   onGetUsers() : void {
-    this.userSubscription = this._userService.getUsers().subscribe({
+    this.userSubscription = this._userService.getUsersWithUpperCaseName().subscribe({
       next: (response) => (this.users = response),
       error: (err) => console.log('error', console.error(err)),
       complete: () => console.log('complete retrieving data!'),

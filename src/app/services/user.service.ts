@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { User } from '../interfaces/user';
 import { environment } from '../../environments/environment';
 
@@ -21,6 +21,15 @@ export class UserService {
 
   getUser(id : number) : Observable<User> {
     return this._http.get<User>(`${environment.BASE_URL}/users/${id}`);
+  }
+
+  getUsersWithUpperCaseName () : Observable<User[]> {
+    return this.getUsers().pipe(
+      map(users => users.map(user => ({
+        ...user,
+        name : user.name.toUpperCase(),
+      }))
+    ))
   }
 
 }
