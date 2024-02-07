@@ -6,6 +6,7 @@ import { PostComponent } from './posts/post/post.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { PhotosComponent } from './photos/photos.component';
 import { UserCardComponent } from './users/user-card/user-card.component';
+import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'posts', component: PostComponent },
   { path: 'post/:id', component: PostDetailsComponent },
   { path: 'photos', component: PhotosComponent },
+  {path : 'todos' , component : TodosComponent}
 ];
 
 @NgModule({
