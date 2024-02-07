@@ -20,7 +20,7 @@ export class PostComponent implements OnInit , OnDestroy {
   }
 
   onGetPosts(): void {
-    this.subscription = this._postService.fetchPosts().subscribe(
+    this.subscription = this._postService.fetchPostsWithUpperCaseTitle().subscribe(
       (postsResponse) => {
         this.posts = postsResponse;
     });
