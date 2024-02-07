@@ -28,7 +28,8 @@ export class UserService {
       map(users => users.map(user => ({
         ...user,
         name : user.name.toUpperCase(),
-        isAdmin : user.id === 1,
+        role : user.id === 1 ? 'admin' : 'user',
+        img : 'https://www.eventfulnigeria.com/wp-content/uploads/2021/04/Avatar-PNG-Free-Download.png'
       }))
     ))
   }

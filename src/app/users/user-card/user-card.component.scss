@@ -8,6 +8,9 @@
     overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   
+    img {
+      width: 100%;
+    }
     &:hover {
       transform: scale(1.02);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
