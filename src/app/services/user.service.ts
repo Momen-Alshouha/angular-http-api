@@ -28,6 +28,7 @@ export class UserService {
       map(users => users.map(user => ({
         ...user,
         name : user.name.toUpperCase(),
+        isAdmin : user.id === 1,
       }))
     ))
   }
