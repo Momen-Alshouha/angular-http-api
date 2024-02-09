@@ -15,10 +15,18 @@ export class UserService {
   getUsers() : Observable<User[]> {
     return this._http.get<User[]>(`${environment.BASE_URL}/users`);
   }
-
-  getUser(id : number) : Observable<User> {
-    return this._http.get<User>(`${environment.BASE_URL}/users/${id}`);
+  
+  getUser(id: number): Observable<User> {
+    return this._http.get<User>(`${environment.BASE_URL}/users/${id}`).pipe(
+      map(user => ({
+        ...user,
+        name: user.name.toUpperCase(),
+        role: user.id === 1 ? 'admin' : 'user',
+        img: `${environment.DEFAULT_IMG}/${user.username.toLowerCase()}`
+      }))
+    );
   }
+    
 
   getUsersWithUpperCaseName () : Observable<User[]> {
     return this.getUsers().pipe(
