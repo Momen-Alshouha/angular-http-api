@@ -9,12 +9,16 @@ import { Subscription } from 'rxjs';
   styleUrl: './photos.component.scss'
 })
 export class PhotosComponent implements OnInit , OnDestroy {
-  
+  title:string;
+  subTitle:string;
   photos? : Photo[];
 
   subscription?:Subscription;
 
-  constructor(private _photoService : PhotoService) {};
+  constructor(private _photoService : PhotoService) {
+    this.title = "Photos";
+    this.subTitle="Photos List"
+  };
 
   ngOnInit(): void {
       this.onGetPhotos();

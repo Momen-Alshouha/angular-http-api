@@ -9,11 +9,16 @@ import { Subscription } from 'rxjs';
   styleUrl: './post.component.scss',
 })
 export class PostComponent implements OnInit , OnDestroy {
+  title : string;
+  subTitle:string;
   posts!: Post[];
 
   subscription!: Subscription;
 
-  constructor(private _postService: PostService) {}
+  constructor(private _postService: PostService) {
+    this.title='Posts'
+    this.subTitle = 'Posts List';
+  }
 
   ngOnInit(): void {
     this.onGetPosts();

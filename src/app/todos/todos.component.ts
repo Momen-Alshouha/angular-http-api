@@ -9,10 +9,14 @@ import { Todo } from '../interfaces/todo';
   styleUrl: './todos.component.scss'
 })
 export class TodosComponent implements OnInit {
-
+  title:string;
+  subTitle:string;
   todos$! : Observable<Todo[]>;
 
-  constructor(private _todosService : TodosService) {};
+  constructor(private _todosService : TodosService) {
+    this.title = 'ToDos';
+    this.subTitle = 'ToDos List';
+  };
 
   ngOnInit(): void {
     this.onGetTodos();

@@ -9,12 +9,15 @@ import { Observable, Subscription } from 'rxjs';
   styleUrl: './user.component.scss',
 })
 export class UserComponent implements OnInit , OnDestroy {
-  
+  title:string;
+  subTitle:string;
   users?: User[];
   private userSubscription! : Subscription;
 
-
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService) {
+    this.title = 'Users'
+    this.subTitle= 'Users List'
+  }
 
   ngOnInit(): void {
     this.onGetUsers();
