@@ -15,6 +15,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { PhotoComponent } from './photos/photo/photo.component';
 import { InnerHeaderComponent } from './shared/inner-header/inner-header.component';
 import { TodosComponent } from './todos/todos.component';
+import { NoDataAvailableComponent } from './shared/no-data-available/no-data-available.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TodosComponent } from './todos/todos.component';
     PhotoComponent,
     InnerHeaderComponent,
     TodosComponent,
+    NoDataAvailableComponent,
   ],
   imports: [
     BrowserModule,

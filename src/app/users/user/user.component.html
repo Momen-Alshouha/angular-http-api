@@ -1,6 +1,12 @@
 <app-inner-header [title]="title" [paragraph]="subTitle"></app-inner-header>
-<div class="container">
+<div *ngIf="users; else noData">
+  <div class="container">
     <div *ngFor="let user of users">
-        <app-user-card ngClass="user-card" [user]="user"></app-user-card>
-    </div>    
+      <app-user-card ngClass="user-card" [user]="user"></app-user-card>
+    </div>
+  </div>
 </div>
+
+<ng-template #noData>
+  <app-no-data-available></app-no-data-available>
+</ng-template>

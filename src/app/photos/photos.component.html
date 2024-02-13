@@ -1,6 +1,13 @@
 <app-inner-header [title]="title" [paragraph]="subTitle"></app-inner-header>
-<div class="container">
+
+  <div *ngIf="photos.length > 0; else noData">
+    <div class="container">
     <div *ngFor="let photo of photos">
-        <app-photo [photo]="photo"></app-photo>
-    </div>    
+      <app-photo [photo]="photo"></app-photo>
+    </div>
+  </div>
 </div>
+
+<ng-template #noData>
+  <app-no-data-available></app-no-data-available>
+</ng-template>

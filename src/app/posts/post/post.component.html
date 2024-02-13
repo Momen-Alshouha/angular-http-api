@@ -1,6 +1,13 @@
 <app-inner-header [title]="title" [paragraph]="subTitle"></app-inner-header>
+
 <div class="container">
+  <div *ngIf="posts.length > 0; else noData">
     <div *ngFor="let post of posts">
-    <app-post-details [post]="post"></app-post-details>
-</div>
+      <app-post-details [post]="post"></app-post-details>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <app-no-data-available></app-no-data-available>
+  </ng-template>
 </div>

@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class PhotosComponent implements OnInit , OnDestroy {
   title:string;
   subTitle:string;
-  photos? : Photo[];
+  photos! : Photo[];
 
   subscription?:Subscription;
 

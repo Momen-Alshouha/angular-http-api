@@ -1,11 +1,15 @@
 <app-inner-header [title]="title" [paragraph]="subTitle" ></app-inner-header>
 <div class="container mt-5">
-<div class="row">
+<div *ngIf="todos$; else noData" class="row">
     <div class="card m-2 p-4 col-md-5 col-12" *ngFor="let todo of todos$ | async">
         <h5> todo : {{todo.title}}</h5>
         <p>Completed ? {{todo.completed}}</p>    
     </div>
 </div>
 </div>
+
+<ng-template #noData>
+<app-no-data-available></app-no-data-available>
+</ng-template>
 
   
