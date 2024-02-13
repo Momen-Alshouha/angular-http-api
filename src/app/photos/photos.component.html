@@ -17,9 +17,7 @@
           <span aria-hidden="true">&lsaquo;</span>
         </a>
       </li>
-      <li class="page-item" *ngFor="let page of getPageNumbers()">
-        <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
-      </li>
+   
       <li class="page-item" (click)="onPageChange(currentPage + 1)">
         <a class="page-link" aria-label="Next">
           <span aria-hidden="true">&rsaquo;</span>

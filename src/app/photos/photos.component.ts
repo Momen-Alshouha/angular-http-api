@@ -13,9 +13,7 @@ export class PhotosComponent implements OnInit, OnDestroy {
   subTitle: string;
   photos: Photo[] = [];
   currentPage: number = 1;
-  pageSize: number = 10;
-  totalItems: number = 0;
-  totalPages: number = 0;
+  pageSize: number = 12;
   subscription?: Subscription;
 
   constructor(private _photoService: PhotoService) {
@@ -32,8 +30,6 @@ export class PhotosComponent implements OnInit, OnDestroy {
       .fetchPhotos(this.currentPage, this.pageSize)
       .subscribe((result: any) => {
         this.photos = result;
-        this.totalItems = result.length;
-        this.totalPages = Math.ceil(this.totalItems / this.pageSize);
       });
   }
 
@@ -48,8 +44,4 @@ export class PhotosComponent implements OnInit, OnDestroy {
     this.fetchPhotos();
   }
 
-  // Function to generate an array of page numbers
-  getPageNumbers(): number[] {
-    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
-  }
 }
