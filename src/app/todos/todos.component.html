@@ -6,6 +6,23 @@
         <p>Completed ? {{todo.completed}}</p>    
     </div>
 </div>
+
+
+    <!-- Pagination -->
+    <ul class="pagination d-flex justify-content-center">
+        <li class="page-item" (click)="onPageChange(currentPage - 1)">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&lsaquo;</span>
+          </a>
+        </li>
+     
+        <li class="page-item" (click)="onPageChange(currentPage + 1)">
+          <a class="page-link" aria-label="Next">
+            <span aria-hidden="true">&rsaquo;</span>
+          </a>
+        </li>
+      </ul>
+      
 </div>
 
 <ng-template #noData>
