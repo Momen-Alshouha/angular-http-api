@@ -23,9 +23,17 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <div class="dropdown" (click)="toggleDropdown($event)">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <div class="w-100 dropdown-menu" [class.show]="showDropdown" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" [routerLink]="['/posts']">Posts</a>
+              <a class="dropdown-item" [routerLink]="['/users']">Users</a>
+              <a class="dropdown-item" [routerLink]="['/photos']">Photos</a>
+              <a class="dropdown-item" [routerLink]="['/todos']">Todos</a>
+            </div>
+          </div>
         </form>
+                
       </div>
     </div>
   </nav>

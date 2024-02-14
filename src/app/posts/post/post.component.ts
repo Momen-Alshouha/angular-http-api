@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class PostComponent implements OnInit , OnDestroy {
   title : string;
   subTitle:string;
-  posts!: Post[];
+  posts: Post[] = [];
 
   subscription!: Subscription;
 
